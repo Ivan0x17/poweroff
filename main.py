@@ -39,14 +39,14 @@ def main():
         else:
             #If config file exists, schedule shutdown at specified time
             try:
-                shutdown_time = datetime.strptime(a, "%H:%M").time()
+                shutdown_time = a
                 current_time = datetime.now().time()
-                if current_time >= shutdown_time:
+                if current_time == shutdown_time:
                     shutdown_pc()
             except ValueError:
                 print("Invalid time format in config.json. Please provide time in HH:MM format.")
-    #time.sleep(10)
-    #print("time!!")
+    
+    
 
 
 main()
